@@ -1,0 +1,32 @@
+MS12-020 - CVE-2012-0002
+
+- Remote Desktop Protocol
+- (Speculative) Double-Free leading to Use-After-Free
+- Occurs within the handling of the maxChannelIds field of the MCS Connect Initial PDU with GCC Conference Create Request
+
+- Driver fails to handle an error, then forces it to abort and free an object
+- The driver attempts to free it again, and fetches a virtual pointer
+
+- Metasploit Framework's proof-of-concept leads to a different crash (access violation in SListRemove)
+  * This gets past StackBufferAllocEx and skips over the potential code execution
+- Original proof-of-concept would be better suited
+- Differentiating the two...
+  * CVE-2012-0002 (Metasploit) sends numerous unknown requests (in Wireshark it appears to be random TCP traffic)
+  * CVE-2012-0002 (Original) sends numerous channelJoinConfirm requests
+- Both proof-of-concepts require multiple attempts to trigger
+
+
+
+Sources:
+https://www.zerodayinitiative.com/advisories/ZDI-12-044/
+https://github.com/rapid7/metasploit-framework/blob/master//modules/auxiliary/dos/windows/rdp/ms12_020_maxchannelids.rb
+https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2012/ms12-020?redirectedfrom=MSDN
+https://www.exploit-db.com/exploits/18606
+https://winprotocoldoc.z19.web.core.windows.net/MS-RDPBCGR/%5bMS-RDPBCGR%5d.pdf
+https://ifconfig.dk/ms12-020/
+https://www.rootshellsecurity.net/ms12-020-the-case-of-the-harmful-copy-and-paste/
+https://exploitshop.wordpress.com/2012/03/13/ms12-020-vulnerabilities-in-remote-desktop-could-allow-remote-code-execution/
+
+Spraying objects:
+https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/rdp/cve_2019_0708_bluekeep_rce.rb
+https://unit42.paloaltonetworks.com/exploitation-of-windows-cve-2019-0708-bluekeep-three-ways-to-write-data-into-the-kernel-with-rdp-pdu/

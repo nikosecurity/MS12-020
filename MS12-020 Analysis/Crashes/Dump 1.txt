@@ -1,0 +1,226 @@
+2: kd> !analyze -v
+Connected to Windows 7 7601 x64 target at (Thu Apr 17 07:08:05.480 2025 (UTC - 4:00)), ptr64 TRUE
+Loading Kernel Symbols
+......................................
+
+Press ctrl-c (cdb, kd, ntsd) or ctrl-break (windbg) to abort symbol loads that take too long.
+Run !sym noisy before .reload to track down problems loading symbols.
+
+.........................
+................................................................
+...........................
+Loading User Symbols
+.........................................
+
+Press ctrl-c (cdb, kd, ntsd) or ctrl-break (windbg) to abort symbol loads that take too long.
+Run !sym noisy before .reload to track down problems loading symbols.
+
+.......................
+................
+Loading unloaded module list
+.....
+*******************************************************************************
+*                                                                             *
+*                        Bugcheck Analysis                                    *
+*                                                                             *
+*******************************************************************************
+
+SYSTEM_SERVICE_EXCEPTION (3b)
+An exception happened while executing a system service routine.
+Arguments:
+Arg1: 00000000c0000005, Exception code that caused the BugCheck
+Arg2: fffff88005bc08c1, Address of the instruction which caused the BugCheck
+Arg3: fffff88006516200, Address of the context record for the exception that caused the BugCheck
+Arg4: 0000000000000000, zero.
+
+Debugging Details:
+------------------
+
+
+
+Press ctrl-c (cdb, kd, ntsd) or ctrl-break (windbg) to abort symbol loads that take too long.
+Run !sym noisy before .reload to track down problems loading symbols.
+
+*************************************************************************
+***                                                                   ***
+***                                                                   ***
+***    Either you specified an unqualified symbol, or your debugger   ***
+***    doesn't have full symbol information.  Unqualified symbol      ***
+***    resolution is turned off by default. Please either specify a   ***
+***    fully qualified symbol module!symbolname, or enable resolution ***
+***    of unqualified symbols by typing ".symopt- 100". Note that     ***
+***    enabling unqualified symbol resolution with network symbol     ***
+***    server shares in the symbol path may cause the debugger to     ***
+***    appear to hang for long periods of time when an incorrect      ***
+***    symbol name is typed or the network symbol server is down.     ***
+***                                                                   ***
+***    For some commands to work properly, your symbol path           ***
+***    must point to .pdb files that have full type information.      ***
+***                                                                   ***
+***    Certain .pdb files (such as the public OS symbols) do not      ***
+***    contain the required information.  Contact the group that      ***
+***    provided you with these symbols if you need this command to    ***
+***    work.                                                          ***
+***                                                                   ***
+***    Type referenced: kernel32!gpServerNlsUserInfo                  ***
+***                                                                   ***
+*************************************************************************
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 1093
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 141890
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 2
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 15
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 6
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 1109
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 3365761
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 106
+
+    Key  : Analysis.Version.DbgEng
+    Value: 10.0.27793.1000
+
+    Key  : Analysis.Version.Description
+    Value: 10.2410.02.02 amd64fre
+
+    Key  : Analysis.Version.Ext
+    Value: 1.2410.2.2
+
+    Key  : Bugcheck.Code.KiBugCheckData
+    Value: 0x3b
+
+    Key  : Bugcheck.Code.LegacyAPI
+    Value: 0x3b
+
+    Key  : Bugcheck.Code.TargetModel
+    Value: 0x3b
+
+    Key  : Failure.Bucket
+    Value: 0x3B_RDPWD!MCSDetachUserRequest+11
+
+    Key  : Failure.Exception.IP.Address
+    Value: 0xfffff88005bc08c1
+
+    Key  : Failure.Exception.IP.Module
+    Value: RDPWD
+
+    Key  : Failure.Exception.IP.Offset
+    Value: 0x278c1
+
+    Key  : Failure.Hash
+    Value: {bd574626-3085-9652-fd91-624b6200a962}
+
+    Key  : Hypervisor.Flags.Value
+    Value: 67
+
+    Key  : Hypervisor.Flags.ValueHex
+    Value: 0x43
+
+    Key  : WER.OS.Branch
+    Value: win7sp1_ldr_escrow
+
+    Key  : WER.OS.Version
+    Value: 7.1.7601.24384
+
+
+BUGCHECK_CODE:  3b
+
+BUGCHECK_P1: c0000005
+
+BUGCHECK_P2: fffff88005bc08c1
+
+BUGCHECK_P3: fffff88006516200
+
+BUGCHECK_P4: 0
+
+FAULTING_THREAD:  fffffa8061264b50
+
+CONTEXT:  fffff88006516200 -- (.cxr 0xfffff88006516200)
+rax=fffff88006516c10 rbx=fffff8a00201b320 rcx=0000000080040001
+rdx=fffffa8061264b50 rsi=fffff8a00b81b6c0 rdi=fffff8a00b81b9d8
+rip=fffff88005bc08c1 rsp=fffff88006516bd0 rbp=0000000000000001
+ r8=0000000000000000  r9=0000000000000000 r10=fffffffffffffffb
+r11=fffff880065161c0 r12=fffff8a00b81ba60 r13=0000000000000003
+r14=0000000000000000 r15=fffff8a00b81bac4
+iopl=0         nv up ei ng nz na pe nc
+cs=0010  ss=0018  ds=002b  es=002b  fs=0053  gs=002b             efl=00010282
+RDPWD!MCSDetachUserRequest+0x11:
+fffff880`05bc08c1 488b11          mov     rdx,qword ptr [rcx] ds:002b:00000000`80040001=????????????????
+Resetting default scope
+
+PROCESS_NAME:  svchost.exe
+
+STACK_TEXT:  
+fffff880`06516bd0 fffff880`05ba91b8     : fffffa80`00000000 00000000`00000001 00000000`00000000 fffff8a0`0b81ba60 : RDPWD!MCSDetachUserRequest+0x11
+fffff880`06516c10 fffff880`05ba32e7     : fffff8a0`0b81b9d8 fffff8a0`0b81b6c0 00000000`00000001 00000000`00000010 : RDPWD!NMDetachUserReq+0x18
+fffff880`06516c40 fffff880`05ba28fe     : fffffa80`612fa600 fffff8a0`00000000 fffff8a0`00e36c00 fffff8a0`0201b320 : RDPWD!NM_Connect+0xcf
+fffff880`06516cd0 fffff880`05b9fe98     : fffff8a0`0b81b000 00000000`0000003e 00000000`00000001 00000000`00000000 : RDPWD!SM_Connect+0x15e
+fffff880`06516d20 fffff880`05b9ffce     : 00000000`00000000 fffff880`06517710 fffffa80`612fa640 fffffa80`612fa64c : RDPWD!WDWConnect+0x694
+fffff880`06516da0 fffff880`05b9b4ee     : 00000000`00000000 fffffa80`612fa634 fffffa80`612fa64c fffffa80`612fa640 : RDPWD!WDLIB_TShareConfConnect+0x106
+fffff880`06516e20 fffff880`041a767f     : 00000000`00000000 fffffa80`612be010 fffffa80`61503280 fffff880`06517710 : RDPWD!WDSYS_Ioctl+0xc2e
+fffff880`06517680 fffff880`041a74c0     : fffffa80`612be010 fffff880`06517710 00000000`63695354 00000000`00000001 : termdd!IcaCallSd+0x43
+fffff880`065176b0 fffff880`041a5916     : 00000000`00382403 fffffa80`612fa4f0 fffffa80`6260ef80 00000000`00000000 : termdd!IcaCallStack+0x68
+fffff880`065176e0 fffff880`041a49e9     : fffffa80`631fe250 fffff880`06517818 fffff880`06517820 00000000`00000200 : termdd!IcaDeviceControlStack+0x65a
+fffff880`065177c0 fffff880`041a4689     : 00000000`00000000 fffffa80`612fa4f0 fffffa80`612fa678 fffffa80`631fe368 : termdd!IcaDeviceControl+0x75
+fffff880`06517810 fffff800`02d4ad9a     : 00000000`00000002 00000000`00000002 00000000`00000000 fffffa80`61564180 : termdd!IcaDispatch+0x215
+fffff880`06517850 fffff800`02f10831     : fffffa80`61564180 fffffa80`61564180 fffffa80`61564180 fffff800`02c3c180 : nt!IopSynchronousServiceTail+0xfa
+fffff880`065178c0 fffff800`02da25d6     : 00000000`0191e8b0 00000000`00000000 00000000`00000000 00000000`00000000 : nt!IopXxxControlFile+0xc51
+fffff880`06517a00 fffff800`02af9bd3     : fffffa80`61264b50 00000000`0191e6d8 fffff880`06517a88 00000000`004b5110 : nt!NtDeviceIoControlFile+0x56
+fffff880`06517a70 00000000`76d998fa     : 000007fe`f5cf13a8 00000000`01a90000 000007fe`00000002 00000000`00000200 : nt!KiSystemServiceCopyEnd+0x13
+00000000`0191e668 000007fe`f5cf13a8     : 00000000`01a90000 000007fe`00000002 00000000`00000200 00000000`00000210 : ntdll!ZwDeviceIoControlFile+0xa
+00000000`0191e670 000007fe`f5cf1b45     : 00000000`00000188 000007fe`f5cf13a8 00000000`00000000 00000000`0191e760 : ICAAPI!IcaIoControl+0x44
+00000000`0191e6e0 000007fe`f5cf1ab0     : 00000000`00000188 00000000`004b5110 00000000`00382403 00000000`0191e850 : ICAAPI!IcaStackIoControlWorker+0x9c
+00000000`0191e730 000007fe`f5946293     : 00000000`01a93040 00000000`00000000 00000000`01a91cd0 00000000`00000000 : ICAAPI!IcaStackIoControl+0x54
+00000000`0191e780 000007fe`f594660a     : 00000000`00000000 00000000`00000000 00000000`01a93040 00000000`00000000 : rdpwsx!TSrvInitWDConnectInfo+0x9b
+00000000`0191e7f0 000007fe`f5946844     : 00000000`00000000 00000000`002b0b14 00000000`00000000 00000000`00000000 : rdpwsx!TSrvConfCreateResp+0x4e
+00000000`0191e850 000007fe`f594909e     : 00000000`000009d4 00000000`01a91cd0 00000000`00000000 00000000`00000000 : rdpwsx!TSrvDoConnect+0xd8
+00000000`0191e8b0 000007fe`f5972b66     : 00000000`01a91cd0 00000000`0038004b 00000000`0038004b 00000000`00000000 : rdpwsx!WsxIcaStackIoControl+0x22a
+00000000`0191e920 000007fe`f596be43     : 00000000`00000000 002d0050`00440052 00000070`00630054 00000000`00000000 : rdpcorekmts!CWsx::StackIoControl+0x56
+00000000`0191e980 000007fe`f5cf1a29     : 00000000`004b5110 00000000`00380003 00000000`0191f6d0 00000000`0000028c : rdpcorekmts!CStack::staticExtensionIoControl+0x6b
+00000000`0191e9e0 000007fe`f5cf27bc     : 00000000`00000000 00000000`002b4d1c 00000000`00000000 000007fe`fea4ba11 : ICAAPI!IcaStackIoControl+0x65
+00000000`0191ea30 000007fe`f596c7ba     : 00000000`00000000 00000000`00000030 00000000`00000000 00000000`76d45d27 : ICAAPI!IcaStackConnectionAccept+0x1fc
+00000000`0191f670 000007fe`f59710d3     : 00000000`00000000 000007fe`f5963fe8 00000000`0191f928 00000000`00000000 : rdpcorekmts!CStack::Accept+0x7e
+00000000`0191f980 000007fe`f5d53708     : 00000000`00000000 00000000`002ef370 00000000`00000000 00000000`0000095c : rdpcorekmts!CKMRDPConnection::AcceptConnection+0xd7
+00000000`0191f9d0 000007fe`f5d57dc5     : 00000000`00000000 00000000`002a2790 00000000`00000000 000007fe`f5d57d94 : termsrv!CConnectionEx::Accept+0x284
+00000000`0191fba0 00000000`76b2570d     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : termsrv!CListenerEx::staticTransferWorkItem+0x31
+00000000`0191fbd0 00000000`76d8385d     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0xd
+00000000`0191fc00 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x1d
+
+
+SYMBOL_NAME:  RDPWD!MCSDetachUserRequest+11
+
+MODULE_NAME: RDPWD
+
+IMAGE_NAME:  RDPWD.SYS
+
+STACK_COMMAND:  .cxr 0xfffff88006516200 ; kb
+
+FAILURE_BUCKET_ID:  0x3B_RDPWD!MCSDetachUserRequest+11
+
+OS_VERSION:  7.1.7601.24384
+
+BUILDLAB_STR:  win7sp1_ldr_escrow
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 7
+
+FAILURE_ID_HASH:  {bd574626-3085-9652-fd91-624b6200a962}
+
+Followup:     MachineOwner
+---------
