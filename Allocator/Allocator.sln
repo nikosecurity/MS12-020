@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Allocator", "Allocator.vcxproj", "{3F95668D-30D4-EF50-2251-F1869B55A2BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|ARM64.Build.0 = Debug|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|x64.ActiveCfg = Debug|x64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|x64.Build.0 = Debug|x64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Debug|x64.Deploy.0 = Debug|x64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|ARM64.ActiveCfg = Release|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|ARM64.Build.0 = Release|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|ARM64.Deploy.0 = Release|ARM64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|x64.ActiveCfg = Release|x64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|x64.Build.0 = Release|x64
+		{3F95668D-30D4-EF50-2251-F1869B55A2BF}.Release|x64.Deploy.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22EBB150-1C26-4E3D-BCCB-E5037D21421A}
+	EndGlobalSection
+EndGlobal
